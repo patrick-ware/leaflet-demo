@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { Icon } from "leaflet";
+// Data
+import * as parkData from "./data/national-parks.geojson";
 // Styles
 import './App.css';
 
