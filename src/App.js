@@ -27,25 +27,12 @@ function App() {
           onClick={() => {
             setActivePark(park);
           }}
-        />
-      ))}
-
-      {activePark && (
-        <Popup
-          position={[
-            activePark.geometry.coordinates[1],
-            activePark.geometry.coordinates[0]
-          ]}
-          onClose={() => {
-            setActivePark(null);
-          }}
         >
-          <div>
-            <h2>{activePark.properties.Code}</h2>
-            <p>{activePark.properties.Name}</p>
-          </div>
-        </Popup>
-      )}
+          <Popup>
+            A pretty CSS3 popup. <br /> Easily customizable.
+          </Popup>
+        </Marker>
+      ))}
     </MapContainer>
   );
 }
