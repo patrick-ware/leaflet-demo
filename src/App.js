@@ -29,7 +29,10 @@ function App() {
           }}
         >
           <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            <div>
+              <h2>{park.properties.Code}</h2>
+              <p>{park.properties.Name}</p>
+            </div>
           </Popup>
         </Marker>
       ))}
