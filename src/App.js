@@ -18,6 +18,7 @@ function App() {
       />
       {nationalParkData.features.map(park => (
         <Marker
+          className="park-marker"
           key={park.properties.PARK_ID}
           position={[
             park.geometry.coordinates[1],
@@ -28,6 +29,23 @@ function App() {
           }}
         />
       ))}
+
+      {activePark && (
+        <Popup
+          position={[
+            activePark.geometry.coordinates[1],
+            activePark.geometry.coordinates[0]
+          ]}
+          onClose={() => {
+            setActivePark(null);
+          }}
+        >
+          <div>
+            <h2>{activePark.properties.Code}</h2>
+            <p>{activePark.properties.Name}</p>
+          </div>
+        </Popup>
+      )}
     </MapContainer>
   );
 }
